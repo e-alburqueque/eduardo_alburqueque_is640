@@ -7,6 +7,7 @@ class Task(models.Model):
     description = models.TextField(max_length=200, default = "")
     is_done = models.BooleanField(default=False)
 
+#check contact
 class Contact(models.Model):
     name = models.CharField(max_length=100, unique=True)  
     email = models.EmailField(unique=True) 

@@ -13,7 +13,7 @@ from .views import TaskListView, TaskCreateView, TestView, ContactListView, Cont
 from .views import ContactDetailView, ContactDeleteView
 from .views import ContactUpdateView
 
-
+#check URLs for CRUD and main page. 
 urlpatterns = [
     path("", ContactListView.as_view(), name="contact_list"),  # This is the start page with an empty contact list
     path("create/", ContactCreateView.as_view(), name="contact_create"),  # URL for creating a new contact
