@@ -19,6 +19,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+#url mapping
 urlpatterns = [
     path('', include('tasks.urls')),  # The empty string '' denotes the root URL
     path('admin/', admin.site.urls),
