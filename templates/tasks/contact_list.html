@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-3">
+    <h2>Contact Management</h2>
+    <a href="{% url 'contact_create' %}" class="btn btn-primary">Create a New Contact</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Contact Name</th>
+                <th>Email</th>
+                <th>Created Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contact in object_list %}
+            <tr>
+                <td>
+                    <a href="{% url 'contact_update' contact.pk %}" class="btn btn-outline-secondary">
+                        <span class="bi bi-pencil"></span>
+                    </a>
+                    <a href="{% url 'contact_delete' contact.pk %}" class="btn btn-outline-danger">
+                        <span class="bi bi-trash"></span>
+                    </a>
+                </td>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.created_time }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">No contacts found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-3">
+    <h2>Contact Details</h2>
+    <p><strong>Name:</strong> {{ object.name }}</p>
+    <p><strong>Email:</strong> {{ object.email }}</p>
+    <p><strong>Notes:</strong> {{ object.notes }}</p>
+    <p><strong>Created Time:</strong> {{ object.created_time }}</p>
+
+    <a href="{% url 'contact_list' %}" class="btn btn-primary">Home</a>
+    <a href="{% url 'contact_update' object.pk %}" class="btn btn-secondary">Edit</a>
+    <a href="{% url 'contact_delete' object.pk %}" class="btn btn-danger">Delete</a>
+</div>
+{% endblock %}
