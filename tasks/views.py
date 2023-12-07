@@ -3,7 +3,7 @@ from django.views.generic import ListView,CreateView
 from django.views.generic import DetailView, DeleteView
 from django.views.generic import UpdateView
 from django.urls import reverse_lazy
-
+from .models import Contact
 from tasks.forms import ContactForm
 
 
@@ -21,14 +21,11 @@ class TaskCreateView(CreateView):
     success_url = reverse_lazy("task_list")
 
 
-
+# test view 
 def TestView(request):  
     # You can pass data to the template if needed    
     context = {'message': 'Hello from custom view!'}     
     return render(request, 'tasks/test_view.html', context)
-
-
-from .models import Contact
 
 class ContactListView(ListView):
     model = Contact
